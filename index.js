@@ -54,7 +54,7 @@ let getHeaderTypes = (header) => {
 
 	let conn
 
-	let onPrompt = () => {
+	let onPrompt = async () => {
 			OUTPUT = '', RSP = ''
 			for (let command of commands){
 				await delay(200)
