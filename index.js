@@ -117,7 +117,7 @@ let getHeaderTypes = (header) => {
 		conn.on('prompt', onPrompt)
 		conn.on('data', onData)
 		conn.on('close', onClose)
-		conn.on('close', () => setTimeout(getVpnStats,5000))
+		conn.on('close', () => setTimeout(getVpnStats,2000))
 		conn.on('connect', onConnect)
 		return conn
 	}
