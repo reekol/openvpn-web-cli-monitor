@@ -4,7 +4,7 @@ let ADDRESS = (process.env.ADDRESS ? process.env.ADDRESS : "127.0.0.1:7505").spl
 const commands = [ "status 3\n","exit\n" ];
 const GENERIC = 'GENERIC'
 const d = console.log
-
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
 var net = require('net')
 var express = require('express')
 var Table = require('cli-table3');
@@ -56,7 +56,10 @@ let getHeaderTypes = (header) => {
 
 	let onPrompt = () => {
 			OUTPUT = '', RSP = ''
-			for (let command of commands) conn.write(command)
+			for (let command of commands){
+				await delay(200)
+				conn.write(command)
+			}
 		}
 	let onData = (data) => {
 			if (data.indexOf(">") != -1) {
