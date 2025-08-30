@@ -1,5 +1,5 @@
 
-let ADDRESS = process.env.ADDRESS ? process.env.ADDRESS.split(':') : "localhost:7505"
+let ADDRESS = (process.env.ADDRESS ? process.env.ADDRESS : "127.0.0.1:7505").split(':')
 
 const commands = [ "status 3\n","exit\n" ];
 const GENERIC = 'GENERIC'
@@ -114,7 +114,7 @@ let getHeaderTypes = (header) => {
 		conn.on('prompt', onPrompt)
 		conn.on('data', onData)
 		conn.on('close', onClose)
-		conn.on('close', () => setTimeout(getVpnStats,2000))
+		conn.on('close', () => setTimeout(getVpnStats,5000))
 		conn.on('connect', onConnect)
 		return conn
 	}
