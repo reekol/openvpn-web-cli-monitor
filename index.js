@@ -1,5 +1,5 @@
 
-let ADDRESS = (process.env.ADDRESS ? process.env.ADDRESS : "127.0.0.1:7505").split(':')
+let ADDRESS = (process.env.ADDRESS ? process.env.ADDRESS : "localhost:7505").split(':')
 
 const commands = [ "status 3\n","exit\n" ];
 const GENERIC = 'GENERIC'
