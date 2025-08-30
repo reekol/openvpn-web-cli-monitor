@@ -3,13 +3,30 @@ Monitoring tool for openvpn with web and cli interfaces.
 
 Shows data form openvpn through management port.
 
+## Install
+
+```bash
+
+git clone https://github.com/reekol/openvpn-web-cli-monitor.git
+cd openvpn-web-cli-monitor
+npm i
+# default localhost:7505
+npm start
+# OR with custom addr and port
+ADDRESS=10.8.0.1:7505 npm start
+```
+
 ## Example use
 ```bash
 
- ADDRESS=localhost:7505 node index.js
+
+ADDRESS=localhost:7505 node start
 ```
-Example Output ( same on http://localhost:8080 )
-```
+
+## Example Output ( same on http://localhost:8080 )
+
+```bash
+
 GENERIC
 ┌──────────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────┬────────────┐
 │ TITLE        │ OpenVPN,2.6.3,x86_64-pc-linux-gnu,[SSL,(OpenSSL)],[LZO],[LZ4],[EPOLL],[PKCS11],[MH/PKTINFO],[AEAD],[DCO] │            │
